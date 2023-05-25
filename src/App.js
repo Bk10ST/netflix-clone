@@ -1,56 +1,73 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import React, { useEffect } from 'react';
 import './App.css';
+import Homescreen from './Homescreen';
+import ProfileScreen from './ProfileScreen';
 
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import { auth } from './firebase';
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
+import { onAuthStateChanged } from 'firebase/auth';
+import Login from './Login';
 function App() {
+  //step 50
+  const user = useSelector(selectUser); //step 86 gives user back
+  
+  //step 83
+  //step 84 go to down
+  const dispatch = useDispatch();
+
+  //step 76
+
+  useEffect(()=>{
+  const unsubscibe=  onAuthStateChanged(auth , (user) => {
+      if(user){
+        //logged in
+      //  console.log(userAuth);
+        //step 85
+
+        dispatch(
+          login({
+          uid: user.uid,
+          email: user.email,
+  
+        }))
+      }else{
+        //logged out
+        //step 84
+        dispatch(logout());
+
+
+      }
+    })
+    return unsubscibe;
+    //77 got to store.js
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+
+      {/*step 1 */}
+      <Router>              {/*step 50 // step 51 login file */}
+        { !user ? (
+    <Login/>
+        ):(
+        
+/*<Homescreen/> crate home screen folder */
+    /*47 */
+  <Routes>  
+    {/*step 86                          step 87 create profile screen file*/}
+    <Route path='/profile' Component={ProfileScreen}/>
+      <Route path="/" exact Component={Homescreen} />{/*48  after this step // step 49 go homescreen css*/} 
+  </Routes>
+      
+        )};
+      </Router>    
     </div>
   );
 }

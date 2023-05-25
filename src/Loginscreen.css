@@ -1,0 +1,107 @@
+/*step 53*/
+.loginscreen{
+    position: relative;
+    height: 100%;
+background: url("https://images.hdqwalls.com/wallpapers/avengers-infinity-war-imax-poster-na.jpg");
+background-size: cover;
+
+}
+
+.loginscreenlogo{
+    position: fixed;
+    left: 0;
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
+    top: 20px;
+}
+/*step 54 login*/
+
+/*step 55*/
+
+.login_btn{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #e50914;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 900;
+}
+/*dtep 56 login*/
+
+/*step 57*/
+
+.gradiant{
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    background-image: linear-gradient(
+        to top,
+        rgba(0,0,0,0.5) 0 ,
+        rgba(0,0,0,0) 60%,
+        rgba(0,0,0,0.8) 100%
+    );
+}
+/*step 58 back to login*/
+.loginscreen_body{
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+    left: 0;
+    right: 0;
+}
+
+.loginscreen_body > h1{
+    font-size: 3.125rem;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 90px;
+}
+.loginscreen_body > h2{
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 200px;
+}
+.loginscreen_body > h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.loginscreen_input > form > input {
+    padding: 10px;
+    outline-width: 0;
+    height: 30px;
+    width: 30%;
+    border: none;
+    max-width: 600px;
+}
+
+.login-getstarted{
+    padding: 16px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    background-color: #e50914;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.loginscreen_input{
+    margin: 20px;
+
+
+}
+
+/*| step 59 // step 60 back to login*/

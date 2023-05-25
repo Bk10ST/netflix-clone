@@ -1,0 +1,66 @@
+/*step 65*/
+
+.signScreen{
+    max-width: 300px;
+    padding: 70px;
+    margin-left: 400px;
+    margin-right: auto;
+    background: rgba(0,0,0,0.85);
+}
+
+.signScreen > form{
+    display: grid;
+    flex-direction: column;
+}
+
+.btn{
+    width: 300px;
+    height: 40px;
+    
+}
+
+.signScreen  > form > input {
+    padding: 10px;
+    outline-width: 0;
+    height: 30px;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+
+}
+
+.signScreen > form > button {
+ 
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+
+}
+
+.signScreen > form > h1 {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+/*66 back to sign*/
+
+/*step 67*/
+
+.signScreen > form > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+.signScreen > form > span {
+    color: grey;
+}
+
+
+.signScreen > form > span > a:hover {
+    text-decoration: underline;
+}
+
+/*step 68 got back to login*/
